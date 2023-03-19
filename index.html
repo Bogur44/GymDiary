@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gymDiary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Gym<span1>Diary</span1><span>Diary</span></h1>
+        
+        <div class="windows">
+            <div class="bgHome bg"></div>
+            <div class="bgCalendar bg"></div>
+            <div class="bgProfile bg"></div>
+            <div class="bgAchievements bg"></div>
+            <img src="./images/home.png" class="home">
+            <img src="./images/calendar.png" class="calendar">
+            <img src="./images/profile.png" class="profile">
+            <img src="./images/achievement.png" class="achievements">
+        </div>
+    </div>
+    <div id="container">
+        <div class="optionsTop">
+            <button onclick="addMuscle('chest')" id="musclePart" class="">Chest</button>
+            <button onclick='addMuscle("back")' id="musclePart" class="">Back</button>
+        </div>
+        <div class="midRow">
+            <div class="optionsLeft">
+                <button id="musclePart" class="">Biceps</button>
+                <button id="musclePart" class="">Triceps</button>
+            </div>
+            <div class="middle"></div>
+            <div class="optionsRight">
+                <button id="musclePart" class="">Delts</button>
+                <button id="musclePart" class="">Trapez</button>
+            </div>
+        </div>    
+        <div class="optionsDown">
+            <button id="musclePart" class="">Legs</button>
+            <button id="musclePart" class="">Calves</button>
+        </div>
+
+        <div class="resultBar"></div>
+    </div>
+
+<script>
+    const middle = document.querySelector('.middle');
+    let array = [''];
+    
+
+function chest(){
+    let muscle = 'chest';
+    imgSrc = './images/chest.jpeg';
+    addMuscle(muscle);
+}
+function back(){
+    let muscle = 'back';
+    imgSrc = './images/back.avif'
+    addMuscle(muscle);
+}
+
+    function addMuscle(muscle){
+        if(array.includes(muscle) === false){
+            const image = document.createElement('img')
+            if(muscle === 'chest'){
+                imgSrc = './images/chest.jpeg'
+            }
+            else if(muscle === 'back'){
+                imgSrc = './images/back.avif'
+            }
+            image.src = imgSrc;
+            middle.appendChild(image);
+            
+            array += muscle;
+            console.log(array)
+        }
+    }
+
+</script>
+
+</body>
+</html>
